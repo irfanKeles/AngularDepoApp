@@ -5,11 +5,12 @@ import { TableModule } from 'primeng/table';
 import { Colum } from '../../@model/genericTable/table';
 import { WarehouseType } from '../../@model/enums/WarehouseTypeEnum';
 import { Warehouse } from '../../@model/warehouse';
-import { DialogService } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ConfirmationService } from 'primeng/api';
 import { NotificationService } from '../../@service/notification.service';
 import { SharedService } from '../../@service/shared.service';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { RayonCreatedModalComponent } from './rayon-created-modal/rayon-created-modal.component';
 
 @Component({
   selector: 'app-generic-table',
@@ -29,14 +30,15 @@ export class GenericTableComponent {
   @Input() tableData!: Warehouse[];
   @Input() warehouseType!: WarehouseType;
   warehouseData: Warehouse[] = [];
-
+  public ref: DynamicDialogRef;
   constructor(
     public dialogService: DialogService,
     private sharedService: SharedService,
     private confirmationService: ConfirmationService,
-    private notificationService: NotificationService
-  ) {
+    private notificationService: NotificationService,
     
+  ) {
+
   }
   ngOnInit() {
     this.getInventory();
@@ -50,6 +52,16 @@ export class GenericTableComponent {
     });
   }
 
+  showReyonDialog() {
+    this.ref = this.dialogService.open(RayonCreatedModalComponent, {
+      modal: true,
+      header: 'Reyon Ekle',
+      data: {
+        warehouseType: this.warehouseType
+      },
+      footer: ""
+    });
+  }
   deleteRayon(rowData: Warehouse, event: Event) {
     const index = this.warehouseData.findIndex(item => item.id === rowData.id);
     this.confirmationService.confirm({
