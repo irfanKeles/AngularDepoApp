@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { InputTextModule } from 'primeng/inputtext';
+import { TypeComponent } from '../../type/type.component';
 
 @Component({
   selector: 'app-rayon-created-modal',
@@ -11,6 +12,7 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     InputTextModule,
     FormsModule,
+    TypeComponent
   ],
   templateUrl: './rayon-created-modal.component.html',
   styleUrl: './rayon-created-modal.component.scss',
@@ -23,5 +25,9 @@ export class RayonCreatedModalComponent {
 
   closeDialog(){
     this.ref.close();
+  }
+
+  getTypeId(event: any) {
+   console.log(event)
   }
 }

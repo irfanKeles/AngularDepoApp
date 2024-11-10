@@ -1,31 +1,32 @@
 <div class="card border-0 flex justify-content-center" [style]="{ width: '25rem' }">
     <ng-template pTemplate="header" class="mb-4">
-      <div class="inline-flex align-items-center justify-content-center gap-2">
-        <span class="fw-bold h5 white-space-nowrap m-0">
-        </span>
-      </div>
+        <div class="inline-flex align-items-center justify-content-center gap-2">
+            <span class="fw-bold h5 white-space-nowrap m-0">
+            </span>
+        </div>
     </ng-template>
     <form>
-      <div class="w-100 text-start">
-        <div class="gap-2">
-          <label for="rayon" class="d-block">Reyon Adı</label>
-          <!--[ngModelOptions]="{standalone: true}"-->
-          <input pInputText disabled   />
+        <div class="w-100 text-start">
+            <div class="gap-2">
+                <label for="rayon" class="d-block">Reyon Adı</label>
+                <!--[ngModelOptions]="{standalone: true}"-->
+                <input pInputText disabled />
+            </div>
         </div>
-      </div>
-      <div class="w-100 mt-3">
-        <label class="d-block text-start">Reyon Türü</label>
-        <!-- <app-category (setDataId)="getCategory($event)"></app-category> -->
-      </div>
-      <div class="w-100 text-start mt-3">
-        <div class="gap-2">
-          <label for="inventory" class="d-block">Eklecek Depo</label>
-          <input pInputText disabled  />
+        <div class="w-100 mt-3">
+            <label class="d-block text-start">Reyon Türü</label>
+            <app-type (setTypeId)="getTypeId($event)"></app-type>
         </div>
-      </div>
-      <div class="d-flex mt-3 justify-content-end align-items-center">
-        <p-button severity="secondary" iconPos="right" [rounded]="true"  class="me-2" label="İptal" icon="pi pi-times" (click)="closeDialog();"/>
-        <p-button severity="success" iconPos="right" [rounded]="true"  label="Ekle" icon="pi pi-check" />
-      </div>
+        <div class="w-100 text-start mt-3">
+            <div class="gap-2">
+                <label for="inventory" class="d-block">Eklecek Depo</label>
+                <input pInputText disabled />
+            </div>
+        </div>
+        <div class="d-flex mt-3 justify-content-end align-items-center">
+            <p-button severity="secondary" iconPos="right" [rounded]="true" class="me-2" label="İptal"
+                icon="pi pi-times" (click)="closeDialog();" />
+            <p-button severity="success" iconPos="right" [rounded]="true" label="Ekle" icon="pi pi-check" />
+        </div>
     </form>
-  </div>
+</div>

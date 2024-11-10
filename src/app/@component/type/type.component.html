@@ -1,1 +1,7 @@
-<p>type works!</p>
+<p-dropdown 
+    [options]="typeList" 
+    [(ngModel)]="selectedType" 
+    optionLabel="name" 
+    placeholder="Reyon Türü" 
+    [appendTo]="body"
+    (onChange)="selectedValue($event)"/>

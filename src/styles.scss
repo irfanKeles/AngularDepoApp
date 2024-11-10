@@ -15,6 +15,7 @@
     .p-dropdown-label {
         border-radius: 10px !important;
         padding: 7px 10px !important;
+        width: 100% !important;
     }
 
     .p-dropdown {
@@ -26,4 +27,19 @@
             font-weight: 500 !important;
         }
     }
+    .p-dropdown-items {
+        padding-left: 0px !important;
+    }
+
+    ul.p-dropdown-items {
+        margin: 0px !important;
+    }
+    .p-dropdown {
+        width: 100% !important;
+        border-radius: 10px !important;
+        .p-dropdown-label {
+            text-align: left !important;
+            padding: 6px 8px !important;
+        }
+    }  
 }

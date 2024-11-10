@@ -3,11 +3,16 @@ import { Type } from '../../@model/type';
 import { isPlatformBrowser } from '@angular/common';
 import { NotificationService } from '../../@service/notification.service';
 import { SharedService } from '../../@service/shared.service';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-type',
   standalone: true,
-  imports: [],
+  imports: [
+    DropdownModule,
+    FormsModule
+  ],
   templateUrl: './type.component.html',
   styleUrl: './type.component.scss'
 })
@@ -15,7 +20,7 @@ export class TypeComponent {
   body: HTMLElement | undefined;
   selectedType: Type;
   typeList: Type[] = [];
-  @Output() setDataId = new EventEmitter<number>();
+  @Output() setTypeId = new EventEmitter<number>();
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -33,13 +38,13 @@ export class TypeComponent {
     this.sharedService.Type$.subscribe(x => {
       this.typeList = x;
       this.selectedType = this.typeList[0];
-      this.setDataId.emit(this.selectedType.id);
+      this.setTypeId.emit(this.selectedType.id);
     },
       err => {
         this.notificationService.error(err.message);
       })
   }
   selectedValue(event: any) {
-    this.setDataId.emit(event.value.id)
+    this.setTypeId.emit(event.value.id)
   }
 }
