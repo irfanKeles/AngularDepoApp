@@ -10,36 +10,40 @@
 /* Reset CSS */
 @layer reset {
 
-    .p-button,
-    .p-inputtext,
+    .p-button{
+        border-radius: 10px !important;
+        padding: 7px 10px !important;
+        .p-button-label {
+            font-weight: 500 !important;
+        }
+    }
+    .p-inputtext{
+        border-radius: 10px !important;
+        padding: 7px 10px !important;
+        width: 100% !important;
+    }
     .p-dropdown-label {
         border-radius: 10px !important;
         padding: 7px 10px !important;
         width: 100% !important;
     }
 
-    .p-dropdown {
-        padding: 0px !important;
-    }
 
-    .p-button {
-        .p-button-label {
-            font-weight: 500 !important;
-        }
-    }
-    .p-dropdown-items {
-        padding-left: 0px !important;
-    }
-
-    ul.p-dropdown-items {
-        margin: 0px !important;
-    }
+  
     .p-dropdown {
         width: 100% !important;
         border-radius: 10px !important;
+        padding: 0px !important;
         .p-dropdown-label {
-            text-align: left !important;
-            padding: 6px 8px !important;
+            border-radius: 10px !important;
+            padding: 7px 10px !important;
+            width: 100% !important;
+        }
+        ul >.p-dropdown-items {
+            margin: 0px !important;
         }
     }  
+    .p-dropdown-items {
+        padding-left: 0px !important;
+    }
 }
