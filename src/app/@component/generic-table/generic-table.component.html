@@ -1,4 +1,4 @@
-<p-table [columns]="cols" [value]="tableData" styleClass="p-datatable-sm p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
+<p-table [columns]="cols" [value]="tableData" styleClass="p-datatable-sm p-datatable-striped " [tableStyle]="{'min-width': '50rem'}">
     <ng-template pTemplate="caption">
         <div class="d-flex align-items-center justify-content-end">
             <p-button label="Reyon Ekle" icon="pi pi-plus" [outlined]="true" />
@@ -20,7 +20,7 @@
             @for(col of columns; track col ; let i = $index ){
                 @switch (col.field) {
                     @case ('rayon') {
-                      <td class="border-end"> {{ rowData[col.field] }} <i class="pi pi-trash text-danger ms-3 cursor-pointer"></i> </td>
+                      <td class="border-end"> {{ rowData[col.field] }} <i class="pi pi-trash text-danger ms-3 cursor-pointer" (click)="deleteRayon(rowData,$event)"></i> </td>
                     }
                     @case ('products'){
                         @if(rowData.products){
@@ -50,3 +50,4 @@
         </tr>
     </ng-template>
 </p-table>
+<p-confirmPopup />
