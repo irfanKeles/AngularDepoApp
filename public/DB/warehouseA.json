@@ -1,0 +1,45 @@
+[
+    {
+      "id":1,
+      "rayon": "R1",
+      "products": [
+        { "id": 1234, "name": "Pirinç" },
+        { "id": 1322, "name": "Ekmek" },
+        { "id": 132232, "name": "Un" },
+        { "id": 1323122, "name": "Makarna" }
+      ],
+      "type": "Gıda"
+    },
+    {
+      "id":2,
+      "rayon": "R2",
+      "products": [
+        { "id": 456456, "name": "Bez" },
+        { "id": 143623, "name": "Deterjan" },
+        { "id": 234523, "name": "Sabun" }
+      ],
+      "type": "Temizlik"
+    },
+    {
+      "id":3,
+      "rayon": "R3",
+      "products": [
+        { "id": 56123457, "name": "Kalem" },
+        { "id": 13456123422, "name": "Defter" },
+        { "id": 345123123, "name": "Silgi" }
+      ],
+      "type": "Kırtasite"
+    },
+    {
+      "id":4,
+      "rayon": "R4",
+      "products": [
+        { "id": 1234, "name": "Pirinç" },
+        { "id": 132232, "name": "Un" },
+        { "id": 132436234232, "name": "Bulgur" },
+        { "id": 45623412434, "name": "Salça" }
+      ],
+      "type": "Gıda"
+    }
+  ]
+  

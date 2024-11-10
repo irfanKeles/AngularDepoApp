@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "rayon": "R1",
+        "type": "Gıda",
+        "products": [
+            {
+                "id": 1,
+                "name": "Ekmek"
+            },
+            {
+                "id": 2,
+                "name": "Un"
+            },
+            {
+                "id": 3,
+                "name": "Makarna"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "rayon": "R2",
+        "type": "Temizlik",
+        "products": [
+            {
+                "id": 4,
+                "name": "Sabun"
+            },
+            {
+                "id": 5,
+                "name": "Toz Bezi"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "rayon": "R3",
+        "type": "Kırtasiye",
+        "products": [
+            {
+                "id": 6,
+                "name": "Silgi"
+            },
+            {
+                "id": 7,
+                "name": "Kalemtraş"
+            },
+            {
+                "id": 8,
+                "name": "Kalem"
+            },
+            {
+                "id": 9,
+                "name": "Defter"
+            }
+        ]
+    }
+]

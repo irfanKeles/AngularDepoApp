@@ -1,0 +1,22 @@
+[
+    { 
+        "id": 1,
+        "name": "Gıda"
+    },
+    { 
+        "id": 2,
+        "name": "Temizlik"
+    },
+    { 
+        "id": 3,
+        "name": "Kırtasite"
+    },
+    { 
+        "id": 4,
+        "name": "Kozmetik"
+    },
+    { 
+        "id": 5,
+        "name": "Elektronik"
+    }
+]
