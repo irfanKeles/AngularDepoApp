@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import "primeicons/primeicons.css";
+
+
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+    button,
+    input,
+    .p-dropdown-label {
+      padding: 7px 10px !important;
+    }
+    .p-dropdown{
+        padding: 0px !important;
+    }
+    button{
+        .p-button-label{
+            font-weight: 500 !important;
+        }
+    }
+   
+}
