@@ -7,18 +7,8 @@ import { GenericTableComponent } from '../generic-table/generic-table.component'
 import { WarehouseService } from '../../@service/warehouse.service';
 import { SharedService } from '../../@service/shared.service';
 import { NotificationService } from '../../@service/notification.service';
-import { CategoryService } from '../../@service/category.service';
-interface Column {
-  field: string;
-  header: string;
-}
+import { TypeService } from '../../@service/type.service';
 
-interface Product {
-  code: number;
-  name: string;
-  category: string;
-  quantity: number;
-}
 
 @Component({
   selector: 'app-dashboard',
@@ -46,7 +36,7 @@ export class DashboardComponent {
 
   constructor(
     private warehouseService: WarehouseService,
-    private categoryService: CategoryService,
+    private typeService: TypeService,
     private sharedService: SharedService,
     private notificationService: NotificationService,
   ) {
@@ -62,7 +52,7 @@ export class DashboardComponent {
       },
     ];
 
-    this.setCategory();
+    this.setType();
     this.setWarehouseA();
     this.setWarehouseb();
   }
@@ -76,9 +66,9 @@ export class DashboardComponent {
     this.getWarehosuTableDataB();
   }
 
-  setCategory() {
-    this.categoryService.getList().subscribe(x => {
-      this.sharedService.setCategory(x);
+  setType() {
+    this.typeService.getList().subscribe(x => {
+      this.sharedService.setType(x);
     },
     err => {
       this.notificationService.error(err.message);

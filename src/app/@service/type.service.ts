@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { GenericHttpService } from './generic-http.service';
 import { Observable } from 'rxjs';
-import { Category } from '../@model/category';
+import { Type } from '../@model/type';
 
 const Endpoints = {
-  GetList: 'category.json'
+  GetList: 'type.json'
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class TypeService {
   constructor(
     private _http: GenericHttpService
   ) { }
 
-  getList(): Observable<Category[]> {
+  getList(): Observable<Type[]> {
     const fullPath = Endpoints.GetList;
-    return this._http.get<Category[]>(fullPath);
+    return this._http.get<Type[]>(fullPath);
   }
 }

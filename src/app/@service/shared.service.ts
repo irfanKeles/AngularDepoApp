@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Observable, of, ReplaySubject } from 'rxjs';
-import { Category } from '../@model/category';
+import { Type } from '../@model/type';
 import { WarehouseType } from '../@model/enums/WarehouseTypeEnum';
 import { CustomLocalStorageKey } from '../@model/storageKeys/keys';
 import { Warehouse } from '../@model/warehouse';
@@ -13,7 +13,7 @@ export class SharedService {
   public searchQuery$ = new ReplaySubject<string>(1);
   public warehouseA$ = new ReplaySubject<any>();
   public warehouseB$ = new ReplaySubject<any>();
-  public category$ = new ReplaySubject<any>();
+  public Type$ = new ReplaySubject<any>();
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object
   ) { }
@@ -28,10 +28,10 @@ export class SharedService {
     if (isPlatformBrowser(this.platformId))
       localStorage.setItem(CustomLocalStorageKey.InventoryB, JSON.stringify(data))
   }
-  setCategory(data: Category[]) {
-    this.category$.next(data)
+  setType(data: Type[]) {
+    this.Type$.next(data)
     if (isPlatformBrowser(this.platformId))
-      localStorage.setItem(CustomLocalStorageKey.Category, JSON.stringify(data))
+      localStorage.setItem(CustomLocalStorageKey.Type, JSON.stringify(data))
   }
 
   getWarehouseA(): Observable<Warehouse[]> {
@@ -50,9 +50,9 @@ export class SharedService {
     return of([]);
   }
 
-  getCategory(): Observable<Category[]> {
+  getType(): Observable<Type[]> {
     if (isPlatformBrowser(this.platformId)) {
-      const data = localStorage.getItem(CustomLocalStorageKey.Category);
+      const data = localStorage.getItem(CustomLocalStorageKey.Type);
       return of(data ? JSON.parse(data) : []);
     }
     return of([]);
