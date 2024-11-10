@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PrimeNGConfig } from 'primeng/api';
 import { RippleModule } from 'primeng/ripple';
 import { ToastModule } from 'primeng/toast';
 
@@ -15,4 +16,11 @@ import { ToastModule } from 'primeng/toast';
 })
 export class AppComponent {
   title = 'AngularDepoApp';
+  constructor(private primengConfig: PrimeNGConfig) {}
+  ngOnInit(){
+    this.primengConfig.setTranslation({
+      accept: 'Sil',
+      reject: 'İptal',
+    })
+  }
 }
