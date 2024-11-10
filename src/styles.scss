@@ -9,18 +9,20 @@
 
 /* Reset CSS */
 @layer reset {
-    button,
-    input,
+
+    .p-button,
+    .p-inputtext,
     .p-dropdown-label {
-      padding: 7px 10px !important;
+        padding: 7px 10px !important;
     }
-    .p-dropdown{
+
+    .p-dropdown {
         padding: 0px !important;
     }
-    button{
-        .p-button-label{
+
+    .p-button {
+        .p-button-label {
             font-weight: 500 !important;
         }
     }
-   
 }
