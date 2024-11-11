@@ -113,12 +113,18 @@ export class DashboardComponent {
 
   search() {
     const query = this.searchQuery.toLowerCase();
-    this.filteredWarehouseListA = this.warehouseListA.filter(item => 
-      item.products?.some(product => product.name.toLowerCase().includes(query)) 
-    );
+    if (query !== '') {
+      this.filteredWarehouseListA = this.warehouseListA.filter(item =>
+        item.products?.some(product => product.name.toLowerCase().includes(query))
+      );
 
-    this.filteredWarehouseListB = this.warehouseListB.filter(item => 
-      item.products?.some(product => product.name.toLowerCase().includes(query)) 
-    );
+      this.filteredWarehouseListB = this.warehouseListB.filter(item =>
+        item.products?.some(product => product.name.toLowerCase().includes(query))
+      );
+    }
+    else {
+      this.filteredWarehouseListA = this.warehouseListA;
+      this.filteredWarehouseListB = this.warehouseListB;
+    }
   }
 }

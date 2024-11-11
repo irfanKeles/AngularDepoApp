@@ -78,7 +78,7 @@ export class GenericTableComponent {
             this.sharedService.setWarehouseA(this.warehouseData);
           }
         }
-        this.notificationService.success();
+        this.notificationService.success(`${rowData.rayon} Reyonu Silindi.`);
       },
       reject: () => {
       }

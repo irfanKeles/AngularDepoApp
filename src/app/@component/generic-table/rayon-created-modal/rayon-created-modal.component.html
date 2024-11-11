@@ -5,28 +5,32 @@
             </span>
         </div>
     </ng-template>
-    <form>
+    <form [formGroup]="rayonForm" (ngSubmit)="onSubmit(rayonForm)">
         <div class="w-100 text-start">
             <div class="gap-2">
-                <label for="rayon" class="d-block">Reyon Adı</label>
-                <!--[ngModelOptions]="{standalone: true}"-->
-                <input pInputText disabled />
+                <label for="rayon" class="d-block">
+                    Reyon Adı*
+                    @if(rayonForm.get('rayon') && rayonForm.get('rayon')?.invalid){
+                        <span class="text-danger small ms-2"> Boş geçilemez !</span>
+                    }
+                </label>
+                <input pInputText formControlName="rayon" />
             </div>
         </div>
         <div class="w-100 mt-3">
-            <label class="d-block text-start">Reyon Türü</label>
-            <app-type (setTypeId)="getTypeId($event)"></app-type>
+            <label class="d-block text-start">Reyon Türü*</label>
+            <app-type (setTypeName)="getTypeName($event)"></app-type>
         </div>
         <div class="w-100 text-start mt-3">
             <div class="gap-2">
-                <label for="inventory" class="d-block">Eklecek Depo</label>
-                <input pInputText disabled />
+                <label for="inventory" class="d-block">Eklecek Depo*</label>
+                <input pInputText [(ngModel)]="warehouseType" disabled [ngModelOptions]="{standalone: true}"/>
             </div>
         </div>
         <div class="d-flex mt-3 justify-content-end align-items-center">
-            <p-button severity="secondary" iconPos="right" [rounded]="true" class="me-2" label="İptal"
+            <p-button severity="secondary" type="button"  iconPos="right" [rounded]="true" class="me-2" label="İptal"
                 icon="pi pi-times" (click)="closeDialog();" />
-            <p-button severity="success" iconPos="right" [rounded]="true" label="Ekle" icon="pi pi-check" />
+            <p-button severity="success" [disabled]="rayonForm.invalid" type="submit" iconPos="right" [rounded]="true" label="Ekle" icon="pi pi-check" />
         </div>
     </form>
 </div>

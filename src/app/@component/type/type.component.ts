@@ -20,7 +20,7 @@ export class TypeComponent {
   body: HTMLElement | undefined;
   selectedType: Type;
   typeList: Type[] = [];
-  @Output() setTypeId = new EventEmitter<string>();
+  @Output() setTypeName = new EventEmitter<string>();
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -38,13 +38,13 @@ export class TypeComponent {
     this.sharedService.Type$.subscribe(x => {
       this.typeList = x;
       this.selectedType = this.typeList[0];
-      this.setTypeId.emit(this.selectedType.name);
+      this.setTypeName.emit(this.selectedType.name);
     },
       err => {
         this.notificationService.error(err.message);
       })
   }
   selectedValue(event: any) {
-    this.setTypeId.emit(event.value.name)
+    this.setTypeName.emit(event.value.name)
   }
 }

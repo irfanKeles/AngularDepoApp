@@ -10,7 +10,7 @@ import { Warehouse } from '../@model/warehouse';
   providedIn: 'root'
 })
 export class SharedService {
-  public searchQuery$ = new ReplaySubject<string>(1);
+  public searchQuery$ = new ReplaySubject<string>();
   public warehouseA$ = new ReplaySubject<any>();
   public warehouseB$ = new ReplaySubject<any>();
   public Type$ = new ReplaySubject<any>();
