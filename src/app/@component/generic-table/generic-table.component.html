@@ -26,7 +26,7 @@
                         @if(rowData.products){
                             <td class="border-end">
                                 @for(item of rowData.products; track item){
-                                    <label class="badge text-bg-primary me-1 cursor-pointer"> {{item.name}} </label>
+                                    <label class="badge text-bg-primary me-1 cursor-pointer" (click)="showProductDialog(rowData,item,$index,true)"> {{item.name}} </label>
                                 }
                                 
                             </td>
@@ -43,7 +43,7 @@
                   }
                 @if($last){
                     <td class="text-end">
-                        <p-button label="Ürün Ekle" icon="pi pi-plus" severity="success" />
+                        <p-button label="Ürün Ekle" icon="pi pi-plus" severity="success" (click)="showProductDialog(rowData,null,$index)" />
                     </td>
                 }
             }

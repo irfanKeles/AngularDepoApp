@@ -11,6 +11,8 @@ import { NotificationService } from '../../@service/notification.service';
 import { SharedService } from '../../@service/shared.service';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { RayonCreatedModalComponent } from './rayon-created-modal/rayon-created-modal.component';
+import { ProductModalComponent } from './product-modal/product-modal.component';
+import { Product } from '../../@model/product';
 
 @Component({
   selector: 'app-generic-table',
@@ -58,6 +60,20 @@ export class GenericTableComponent {
       header: 'Reyon Ekle',
       data: {
         warehouseType: this.warehouseType
+      },
+      footer: ""
+    });
+  }
+  showProductDialog(rowData:Warehouse,prodcut:Product | null, index:number,isUpdate:boolean = false) {
+    this.ref = this.dialogService.open(ProductModalComponent, {
+      modal: true,
+      header: `Ürün ${!isUpdate?'Ekle':'Düzenle'}`,
+      data: {
+        warehouseType: this.warehouseType,
+        isUpdate:isUpdate,
+        rowData:rowData,
+        index:index,
+        prodcut:prodcut
       },
       footer: ""
     });
