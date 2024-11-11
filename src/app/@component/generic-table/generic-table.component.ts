@@ -75,10 +75,10 @@ export class GenericTableComponent {
           if (this.warehouseType === 1) {
             this.sharedService.setWarehouseA(this.warehouseData);
           } else {
-            this.sharedService.setWarehouseA(this.warehouseData);
+            this.sharedService.setWarehouseB(this.warehouseData);
           }
         }
-        this.notificationService.success(`${rowData.rayon} Reyonu Silindi.`);
+        this.notificationService.success(`${this.sharedService.enumType(this.warehouseType)} - ${rowData.rayon} Reyonu Silindi.`);
       },
       reject: () => {
       }
